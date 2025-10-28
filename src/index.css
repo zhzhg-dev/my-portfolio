@@ -1,0 +1,84 @@
+/* src/index.css - 最小化全局样式，纯 CSS，保证水平 + 垂直完全居中 */
+
+:root {
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #0ea5e9; /* 蓝色 */
+  --card-bg: #f8fafc;
+  --max-w: 760px;
+  --pad: 24px;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(135deg, #e6f2fb 0%, #ffffff 100%);
+  color: #111827;
+}
+
+/* page container fills viewport */
+.page-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;     /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  padding: 20px;
+}
+
+/* 卡片样式（居中内容限制宽度） */
+.center-card {
+  width: 100%;
+  max-width: var(--max-w);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: calc(var(--pad) * 1.5);
+  box-shadow: 0 8px 30px rgba(10, 10, 10, 0.06);
+  text-align: center;
+}
+
+/* 顶部导航（居中显示） */
+.nav {
+  display: inline-flex;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.nav a:hover { color: var(--accent); background: rgba(14,165,233,0.06); }
+
+/* 主标题与副标题 */
+.hero h1 {
+  font-size: 36px;
+  color: #0b63a6;
+  margin-bottom: 8px;
+}
+.hero h2 {
+  font-size: 18px;
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.hero p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* 响应式：小屏幕缩小文字 */
+@media (max-width: 560px) {
+  .center-card { padding: 18px; border-radius: 10px; }
+  .hero h1 { font-size: 28px; }
+  .hero h2 { font-size: 16px; }
+  .nav a { font-size: 15px; }
+}

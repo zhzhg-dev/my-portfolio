@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  background: linear-gradient(to bottom right, #e3f2fd, #f8f9fa);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #007acc;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #555;
+}
